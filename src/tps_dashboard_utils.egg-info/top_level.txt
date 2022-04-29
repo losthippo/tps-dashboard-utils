@@ -1,1 +1,1 @@
-tps-dashboard-utils
+tps_dashboard_utils
