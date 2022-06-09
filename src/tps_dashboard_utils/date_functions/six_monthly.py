@@ -1,5 +1,5 @@
 from dateutil.relativedelta import relativedelta
-import monthly
+from tps_dashboard_utils.date_functions import monthly
 
 
 def start(last=False):

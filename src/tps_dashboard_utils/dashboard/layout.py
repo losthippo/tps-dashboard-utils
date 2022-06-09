@@ -1,5 +1,5 @@
 from dash import dcc
-from src.colours import categorical
+from tps_dashboard_utils.colours import categorical
 import dash_bootstrap_components as dbc
 import plotly.io as pio
 
