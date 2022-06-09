@@ -1,4 +1,4 @@
-import colour_names as cn
+from tps_dashboard_utils.colours import colour_names as cn
 
 pastel = ['#86E3CE', '#D0E6A5', '#FFDD94', '#FA897B', '#CCABDB']
 rag = ['#FF7588', '#FFA87D', '#16D39A']
