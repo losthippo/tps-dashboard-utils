@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="tps-dashboard-utils",
-    version="0.0.3",
+    version="0.0.4",
     author="Lisa Hendry",
     author_email="lisahendry@turningpointscotland.com",
     description="Some useful utilities for building dashboards",
