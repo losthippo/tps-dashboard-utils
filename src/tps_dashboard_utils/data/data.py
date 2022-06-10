@@ -30,7 +30,12 @@ def age_bins(df, col):
 def label(df, numerator, denominator=False):
     """ Function that takes a dataframe and a column of values and \
     generates a percentage that each value represents. \
-    It also then combines these into a label that can be used for charting."""
+    It also then combines these into a label that can be used for charting.
+
+    Denominator can be specified if the calculation should be as a percentage
+    of a particular variable, e.g. number of clients that were worked with in a period
+    instead of the total in the dataframe
+    """
     if denominator:
         df['P'] = round(df[numerator] * 100 / denominator, 2)
     else:
@@ -81,10 +86,10 @@ def create_csv(name_string, datasets, data, start_date, end_date, columns_to_inc
     return dict(filename=filename, content=content, type="text/csv")
 
 
-def group_count_and_label(data, group_by, index='POEID', simple=False, n=5, denominator=False):
+def group_count_and_label(data, group_by, index='POEID', simple=False, n=5, denominator=False, dropna=True):
     df = data.groupby(group_by)[[index]].count().reset_index()
     if simple:
-        df = df.replace(df.groupby(group_by).sum().sort_values(index, ascending=False).index[n:], 'Other') \
+        df = df.replace(df.groupby(group_by, dropna=dropna).sum().sort_values(index, ascending=False).index[n:], 'Other') \
             .groupby(group_by).sum().reset_index()
     else:
         pass
