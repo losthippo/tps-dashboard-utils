@@ -25,3 +25,7 @@ def end(last=False):
     """
     first_day = start(last=last)
     return first_day + relativedelta(days=6)
+
+
+def days_MS():
+    return ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday', 'Sunday']
