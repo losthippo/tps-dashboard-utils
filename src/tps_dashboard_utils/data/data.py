@@ -87,7 +87,7 @@ def create_csv(name_string, datasets, data, start_date, end_date, columns_to_inc
     return dict(filename=filename, content=content, type="text/csv")
 
 
-def group_count_and_label(data, group_by, index='POEID', label=True, simple=False, n=5, denominator=False, dropna=True, reindex=False):
+def group_count_and_label(data, group_by, index='POEID', apply_label=True, simple=False, n=5, denominator=False, dropna=True, reindex=False):
     df = data.groupby(group_by, dropna=dropna)[[index]].count().reset_index()
     
     if reindex:
@@ -101,7 +101,7 @@ def group_count_and_label(data, group_by, index='POEID', label=True, simple=Fals
     else:
         pass
 
-    if label:
+    if apply_label:
         df = label(df=df, numerator=index, denominator=denominator)
     else:
         pass
