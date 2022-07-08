@@ -1,3 +1,4 @@
+from textwrap import fill
 from dash import html
 from io import StringIO
 import pandas as pd
@@ -86,8 +87,14 @@ def create_csv(name_string, datasets, data, start_date, end_date, columns_to_inc
     return dict(filename=filename, content=content, type="text/csv")
 
 
-def group_count_and_label(data, group_by, index='POEID', simple=False, n=5, denominator=False, dropna=True):
+def group_count_and_label(data, group_by, index='POEID', simple=False, n=5, denominator=False, dropna=True, reindex=False):
     df = data.groupby(group_by)[[index]].count().reset_index()
+    
+    if reindex:
+        df = data.groupby(group_by)[[index]].count().reindex(reindex, fill_value=0).reset_index()
+    else:
+        pass
+    
     if simple:
         df = df.replace(df.groupby(group_by, dropna=dropna).sum().sort_values(index, ascending=False).index[n:], 'Other') \
             .groupby(group_by).sum().reset_index()
