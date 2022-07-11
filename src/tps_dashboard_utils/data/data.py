@@ -116,7 +116,7 @@ def create_csv(name_string, datasets, data, start_date, end_date, columns_to_inc
     return dict(filename=filename, content=content, type="text/csv")
 
 
-def group_count_and_label(data, group_by, aggregation={'POEID':'count'}, apply_label=True, simple=False, n=5, denominator=False, dropna=True, reindex=False):
+def group_count_and_label(data, group_by, aggregation={'POEID':'count'}, index='POEID', apply_label=True, simple=False, n=5, denominator=False, dropna=True, reindex=False):
     df = data.groupby(group_by, dropna=dropna).agg(aggregation).reset_index()
     
     if reindex:
