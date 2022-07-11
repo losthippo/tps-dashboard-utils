@@ -45,7 +45,7 @@ def label(df, numerator, denominator=False):
     return df
 
 
-def business_minutes(start, end):
+def business_minutes(start, end, biz_hours=pd.offsets.BusinessHour()):
     times_array = pd.date_range(start, end, freq='min')
     times = pd.DataFrame(times_array, columns=['timestamp'])
     times['IsBizMin'] = times['timestamp'].apply(pd.Timestamp).apply(biz_hours.is_on_offset)
@@ -59,7 +59,7 @@ def business_minutes(start, end):
         return biz_min
 
 
-def non_business_minutes(start, end):
+def non_business_minutes(start, end, biz_hours=pd.offsets.BusinessHour()):
     times_array = pd.date_range(start, end, freq='min')
     times = pd.DataFrame(times_array, columns=['timestamp'])
     times['IsBizMin'] = times['timestamp'].apply(pd.Timestamp).apply(biz_hours.is_on_offset)
@@ -71,7 +71,7 @@ def non_business_minutes(start, end):
     
     else:
         return non_biz_min
-        
+
 
 def calculate_outside_hours(df, start, end):
     biz_hours = pd.offsets.BusinessHour()
