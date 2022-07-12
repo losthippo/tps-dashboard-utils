@@ -44,7 +44,7 @@ def no_data_in_period_check(fig):
     return fig
 
 
-def horizontal_bars(data, x_data, y_data, label_data, height=275, category_order='total ascending', group=False, color=False):
+def horizontal_bars(data, x_data, y_data, label_data, height=275, category_order='total ascending', group=False, color=None):
     fig = px.bar(data, y=y_data, x=x_data, orientation='h', text=label_data, height=height, color=color)
     fig.update_xaxes(title="", showticklabels=False)
     fig.update_yaxes(title="", showticklabels=True, categoryorder=category_order)
