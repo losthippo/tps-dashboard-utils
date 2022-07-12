@@ -51,7 +51,8 @@ def horizontal_bars(data, x_data, y_data, label_data, height=275, category_order
     fig.update_layout(margin=margins)
     if group:
         fig.update_layout(barmode='group')
-    return no_data_in_period_check(fig)
+    fig = no_data_in_period_check(fig)
+    return fig
 
 
 def vertical_bars(data, x_data, y_data, label_data, height=None, color=None, category_order='trace', group=False):
