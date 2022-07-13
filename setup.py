@@ -5,18 +5,18 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="tps-dashboard-utils",
-    version="0.0.24",
+    version="0.0.25",
     author="Lisa Hendry",
     author_email="lisahendry@turningpointscotland.com",
     description="Some useful utilities for building dashboards",
     long_description=long_description,
     long_description_content_type="text/markdown",
     # TODO
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/losthippo/tps-dashboard-utils",
     # TODO
-    project_urls={
-        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
-    },
+    # project_urls={
+    #     "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
+    # },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
