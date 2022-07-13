@@ -44,24 +44,28 @@ def no_data_in_period_check(fig):
     return fig
 
 
-def horizontal_bars(data, x_data, y_data, label_data, height=275, category_order='total ascending', group=False, color=None, hover_data=None):
+def horizontal_bars(data, x_data, y_data, label_data, height=275, category_order='total ascending', group=False, color=None, hover_data=None, hovermode=True):
     fig = px.bar(data, y=y_data, x=x_data, orientation='h', text=label_data, height=height, color=color, hover_data=hover_data)
     fig.update_xaxes(title="", showticklabels=False)
     fig.update_yaxes(title="", showticklabels=True, categoryorder=category_order)
     fig.update_layout(margin=margins)
     if group:
         fig.update_layout(barmode='group')
+    if hovermode == False:
+        fig.update_layout(hovermode=False)
     fig = no_data_in_period_check(fig)
     return fig
 
 
-def vertical_bars(data, x_data, y_data, label_data, height=None, color=None, category_order='trace', group=False, hover_data=None):
+def vertical_bars(data, x_data, y_data, label_data, height=None, color=None, category_order='trace', group=False, hover_data=None, hovermode=True):
     fig = px.bar(data, y=y_data, x=x_data, text=label_data, height=height, color=color, hover_data=hover_data)
     fig.update_xaxes(title="", showticklabels=True, categoryorder=category_order)
     fig.update_yaxes(title="", showticklabels=False)
     fig.update_layout(margin=margins)
     if group:
         fig.update_layout(barmode='group')
+    if hovermode==False:
+        fig.update_layout(hovermode=False)
     return no_data_in_period_check(fig)
 
 
