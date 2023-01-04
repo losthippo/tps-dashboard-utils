@@ -6,7 +6,8 @@ def current_quarter():
     """
     Returns the number of the current quarter
     """
-    return (dt.date.today().month - 1) // 3 + 1
+    quarters = [4,4,4,1,1,1,2,2,2,3,3,3]
+    return quarters[dt.date.today().month]
 
 
 def start(last=False):
@@ -15,9 +16,13 @@ def start(last=False):
     Use last=True to get the first date of the last quarter.
     """
     quarter = current_quarter()
+    year = dt.date.today().year
+    starts = {1:4, 2:7,  3:10,  4:1}
     if last:
+        if quarter == 4:
+            year -= 1
         quarter -= 1
-    return dt.date(dt.date.today().year, 3 * quarter - 2, 1)
+    return dt.date(year, starts[quarter], 1)
 
 
 def end(last=False):

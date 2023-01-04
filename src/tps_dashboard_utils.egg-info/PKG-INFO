@@ -1,13 +1,10 @@
 Metadata-Version: 2.1
 Name: tps-dashboard-utils
-Version: 0.0.3
+Version: 0.0.33
 Summary: Some useful utilities for building dashboards
-Home-page: https://github.com/pypa/sampleproject
+Home-page: https://github.com/losthippo/tps-dashboard-utils
 Author: Lisa Hendry
 Author-email: lisahendry@turningpointscotland.com
-License: UNKNOWN
-Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -20,4 +17,3 @@ License-File: LICENSE
 This is a simple example package. You can use
 [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
 to write your content.
-

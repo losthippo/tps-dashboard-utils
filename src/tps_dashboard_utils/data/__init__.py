@@ -1,3 +1,0 @@
-from tps_dashboard_utils.data import connection
-from tps_dashboard_utils.data import data
-from tps_dashboard_utils.data import github

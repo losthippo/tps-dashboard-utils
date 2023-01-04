@@ -13,9 +13,9 @@ src/tps_dashboard_utils/colours/colour_names.py
 src/tps_dashboard_utils/dashboard/__init__.py
 src/tps_dashboard_utils/dashboard/charts.py
 src/tps_dashboard_utils/dashboard/layout.py
-src/tps_dashboard_utils/data/__init__.py
-src/tps_dashboard_utils/data/connection.py
-src/tps_dashboard_utils/data/data.py
+src/tps_dashboard_utils/data_functions/__init__.py
+src/tps_dashboard_utils/data_functions/data.py
+src/tps_dashboard_utils/data_functions/github.py
 src/tps_dashboard_utils/date_functions/__init__.py
 src/tps_dashboard_utils/date_functions/monthly.py
 src/tps_dashboard_utils/date_functions/quarterly.py
